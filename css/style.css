@@ -3,13 +3,23 @@
     padding: 0;
     box-sizing: border-box;
 }
-
-
 /*шрифты=============*/
 
 @font-face {
-    font-family: Raleway_f;
-    src: url(assets/fonts/raleway-regular.woff2);
+    font-family: "Roboto Condensed";
+    src: url(../fonts/RobotoCondensed-Regular.ttf);
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: "Roboto Condensed";
+    src: url(../fonts/RobotoCondensed-Bold.ttf);
+    font-weight: bold;
+    font-style: normal;
+}
+@font-face {
+    font-family: "PTSans";
+    src: url(../fonts/PTSans-Regular.ttf);
     font-weight: normal;
     font-style: normal;
 }
@@ -17,6 +27,8 @@
 :root {
     --index: calc(1vw + 1vh);
     --main-color: #09606B;
+    --grey-color: #E2E2E2;
+    --text-color:  #111;
 }
 
 ul,
@@ -33,9 +45,23 @@ body {
     font-family: "Roboto Condensed", Arial, Helvetica, sans-serif;
     font-size: 16px;
     line-height: 24px;
-    color: #000;
+    color: var(--text-color);
 }
-
+h1{
+    font-family: 'Roboto Condensed';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 40px;
+    line-height: 47px;    
+}
+h2{
+    margin-bottom: calc(var(--index) * 1.2);
+    font-family: 'Roboto Condensed';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 28px;
+    line-height: 33px;     
+}
 h3 {
     font-family: 'Roboto Condensed';
     font-style: normal;
@@ -54,7 +80,7 @@ h3 {
 
 .header {
     width: 100%;
-    background: lightgrey;
+    background: var(--grey-color);
 }
 
 .header-inner {
@@ -117,6 +143,18 @@ h3 {
     color: #2C2B2B;
     width: 760px;
     margin-bottom: 30px;
+   
+} 
+.promo h3{
+    font-family: 'Roboto Condensed';
+font-style: normal;
+font-weight: 400;
+font-size: 22px;
+line-height: 26px;
+/* identical to box height */
+color: #000000;
+margin-top: 10px ;
+
 }
 
 .promo h3 {
@@ -126,7 +164,7 @@ h3 {
     font-size: 22px;
     line-height: 26px;
     /* identical to box height */
-    color: #000000;
+    color: var(--text-color);
     margin-top: 10px;
 }
 
@@ -135,80 +173,86 @@ h3 {
     height: 46px;
     line-height: 46px;
     background: var(--main-color);
-    ;
+    
     font-family: 'Roboto Condensed';
     font-style: normal;
     font-weight: 400;
     font-size: 24px;
-    /* secondary */
-    color: #EDEDED;
+    
+    color: var(--grey-color);
     text-align: center;
     margin-top: 20px;
 }
 
 
-/* services
- */
-
-.services-list {
-    display: flex;
-    flex-flow: row wrap;
+/* services */
+.services{
+margin-top: calc(var(--index) * 2);
+border: 1px solid red;
 }
 
-.service {
-    max-width: 360px;
+/* 1vw=20   2000px
+1vh=5    500px
+index(1vw+1vh) = 25 */
+.services-list{
+   display: flex;
+   flex-flow: row wrap; 
+   justify-content: space-between;
+}
+.service{
+    flex: 1 1 28%;
+    max-width: 400px;
     min-width: 300px;
-    height: 30vh;
-    flex: 1 1 30%;
-    background-color: rgba(243, 243, 243, 0.6);
+    height: calc(var(--index) * 10) ;
+    /* border: 10px solid red; */
+    min-height: 230px;
     position: relative;
-    margin-right: calc(var(--index) * 2);
-    margin-bottom: calc(var(--index) * 2);
+
+    background-color:rgba(243, 243, 243, 0.73) ;
+    padding: 25px;
     overflow: hidden;
-    transition: 0.8s;
+    transition: 1s;
+    margin-bottom: calc(var(--index)) ;
 }
-
-.service:hover {
-    background-color: rgba(243, 243, 243, 0);
+.service:hover{
+    background-color:rgba(243, 243, 243, 0) ; 
     transition: 1s;
 }
-
-.service:hover .serv-img {
-    transform: scale(1.5);
-    transition: 1s;
-}
-
-.service:hover figcaption {
+.service:hover .service-title{
     opacity: 0;
     transition: 1s;
 }
-
-.serv-img {
+.service:hover  .service-img{
+    transform: scale(1.87);
+    transition: 1s;
+}
+.service-img{
     position: absolute;
-    top: 0;
+    top:0 ;
     left: 0;
     z-index: -1;
     width: 100%;
     height: 100%;
     object-fit: cover;
-}
 
-.serv-title {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    height: 100%;
-    width: 100%;
-    padding: 25px;
+}
+.service-h3{
     color: var(--main-color);
 }
+.service-title{
+       /* border: 10px solid red; */
+       width: 100%;
+       height: 100%; 
+       display: flex;
+       flex-flow: column ; 
+       justify-content: space-between;
 
-.serv-icon {
+}
+ .svg-icon {    
+    width: 47px;
+    height: 51px;
     align-self: flex-end;
-    width: 50px;
-    height: 50px;
 }
-
-.serv-icon path {
-    /* fill: black; */
-}
+.svg-icon path {
+  fill: var(--main-color);
+ }

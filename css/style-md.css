@@ -2,6 +2,7 @@
 @media (max-width: 768px){
     .container{
            width: 100%;
+           padding: 0 2vw;
            min-width: 275px;
            margin: 0 auto;
        }
@@ -67,6 +68,28 @@
    .contact{
     margin-right: 55px;
    }
-   
-   
+   .promo-inner{
+    flex-flow: column wrap;
+   }
+   .promo h1{
+    width: auto;
+    /* max-width: 760px; */
+    font-size: 2rem;
+    line-height: 2rem;
+  }
+  .promo h3{
+    font-size: 1.2rem;
+    line-height: 1.4rem;
+    text-align: center;
+    margin-top: 1rem ;
+  }
+  .btn-cta{    
+    height: 40px;
+    line-height: 40px;   
+    font-size: 1.1rem;    
+    margin-top: 1.4rem ;
+    }
+
+
+
    }
