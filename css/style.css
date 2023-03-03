@@ -188,7 +188,7 @@ margin-top: 10px ;
 /* services */
 .services{
 margin-top: calc(var(--index) * 2);
-border: 1px solid red;
+/* border: 1px solid red; */
 }
 
 /* 1vw=20   2000px
